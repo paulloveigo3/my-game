@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>按鈕發聲測試</title>
+</head>
+<body>
+
+  <h1>✅ GitHub Pages 成功部署！</h1>
+
+  <button id="soundButton">點我發聲</button>
+
+  <audio id="clickSound" src="https://www.soundjay.com/button/beep-07.mp3" preload="auto"></audio>
+
+  <script>
+    document.getElementById('soundButton').addEventListener('click', function () {
+      const sound = document.getElementById('clickSound');
+      sound.currentTime = 0;
+      sound.play().catch(e => console.error("播放錯誤：", e));
+    });
+  </script>
+
+</body>
+</html>
